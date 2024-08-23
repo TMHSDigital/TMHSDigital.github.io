@@ -11,38 +11,49 @@ Welcome to the Webfusion Solutions website! This repository contains the source 
    - [Adding a New Product](#adding-a-new-product)
    - [Adding a New Page](#adding-a-new-page)
 4. [How Changes Impact the Site](#how-changes-impact-the-site)
-5. [Styling and Animations](#styling-and-animations)
-6. [Development and Deployment](#development-and-deployment)
+5. [Development and Deployment](#development-and-deployment)
 
 ## Overview
 
-The Webfusion Solutions website is built using Jekyll, a static site generator. The site is designed to be scalable and easily maintainable, allowing you to add new sections, elements, and animations with minimal changes to existing files. The theme reflects an old-school PC terminal, providing a nostalgic yet modern browsing experience.
+The Webfusion Solutions website is built using Jekyll, a static site generator. The site is designed to be easy to scale, allowing you to add new sections, elements, and animations with minimal changes to the existing files.
 
 ## Project Structure
 
 The project is organized as follows:
 
 - **_includes/**: Contains partial HTML files that can be included in other files. Commonly used for headers, footers, and reusable sections like the hero banner, services, and products.
+
 - **_layouts/**: Defines the overall structure of the pages. The `default.html` layout includes the header, footer, and main content areas. All pages on the site use this layout.
+
 - **_sass/**: Contains all the Sass (CSS preprocessor) files organized into subfolders:
   - **base/**: Global styles, such as resets and typography, are stored here.
   - **components/**: Styles for individual components like buttons, cards, and forms.
   - **layout/**: Styles for the layout of the site, including the header, footer, and grid system.
   - **utilities/**: Utility classes and helper functions, including animations and responsive design.
+
 - **_data/**: Stores data files in YAML format. You can use this directory to store data that can be used in your templates (e.g., services, products).
+
 - **_services/**: Contains individual Markdown files for each service offered by Webfusion Solutions.
+
 - **_products/**: Contains individual Markdown files for each product offered by Webfusion Solutions.
+
 - **assets/**: Contains static assets like CSS, JavaScript, and images.
   - **css/**: Stores the compiled CSS file, generated from the Sass files.
-  - **js/**: Stores JavaScript files, including animations created with GSAP.
+  - **js/**: Stores JavaScript files.
   - **images/**: Stores images used throughout the site.
+
 - **Gemfile**: Defines the Ruby gems (libraries) that the project depends on, including Jekyll and any plugins.
+
 - **_config.yml**: The main configuration file for the Jekyll site. This file sets various site-wide options, such as the site's title, URL, and any plugins used.
+
+---
 
 ## How to Add New Content
 
 ### Adding a New Service
 
+```markdown
+# Example command
 1. **Create a New Markdown File:**
    - Navigate to the `_services/` directory.
    - Create a new Markdown file named after the service (e.g., `ai-solutions.md`).
@@ -80,8 +91,6 @@ The project is organized as follows:
 3. **Update the Products Section:**
    - The new product will automatically appear in the "Our Products" section of the site, as it pulls data from the `_products/` directory.
 
-### Adding a New Page
-
 1. **Create a New Markdown or HTML File:**
    - In the root directory, create a new file for the page (e.g., `about.md` or `contact.html`).
 
@@ -100,6 +109,8 @@ The project is organized as follows:
 4. **Link the Page:**
    - Add a link to the new page in the site's navigation (usually in `_includes/header.html`).
 
+---
+
 ## How Changes Impact the Site
 
 - **_includes/**: Changes to files in this directory affect all pages that include these files. For example, updating the `_includes/header.html` file will change the header on all pages.
@@ -107,6 +118,8 @@ The project is organized as follows:
 - **_sass/**: Changes to Sass files will regenerate the site's CSS. Updating files in `_sass/base/` will generally affect the entire site, while changes in `_sass/components/` or `_sass/layout/` will only impact specific elements or layouts.
 - **_data/**: Updating data files in `_data/` can automatically update sections of the site that rely on this data, like lists of services or products.
 - **_config.yml**: Changes to this file will affect site-wide settings and configurations. For example, changing the `baseurl` will alter how URLs are generated across the site.
+
+---
 
 ## Styling and Animations
 
@@ -118,6 +131,8 @@ The project is organized as follows:
 
 ### 3. Animations (`_sass/utilities/_animations.scss` and `assets/js/animations.js`)
 - Contains SCSS and JS files that control animations using GSAP, focusing on a nostalgic yet modern experience that mimics the feel of navigating through an old PC terminal.
+
+---
 
 ## Development and Deployment
 
@@ -133,6 +148,8 @@ The project is organized as follows:
    ```sh
    bundle install
    ```
+
+---
 
 ### Deployment
 
