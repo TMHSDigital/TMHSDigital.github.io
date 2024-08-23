@@ -1,0 +1,13 @@
+<section id="services" class="services slide-in">
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="service-list">
+      {% for service in site.services %}
+        <div class="service">
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

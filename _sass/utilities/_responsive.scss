@@ -1,0 +1,31 @@
+/* Mobile First Approach */
+.container {
+  padding: 10px;
+}
+
+.header, .footer {
+  padding: 15px 0;
+}
+
+.nav ul {
+  flex-direction: column;
+}
+
+.nav ul li {
+  margin-bottom: 10px;
+}
+
+/* Larger devices (tablets and up) */
+@media (min-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .nav ul {
+    flex-direction: row;
+  }
+
+  .nav ul li {
+    margin-bottom: 0;
+  }
+}
