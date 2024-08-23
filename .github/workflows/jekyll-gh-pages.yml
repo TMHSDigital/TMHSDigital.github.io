@@ -1,0 +1,65 @@
+# Workflow for building and deploying a Jekyll site to GitHub Pages
+name: Deploy Jekyll Site to GitHub Pages
+
+on:
+  # Runs the workflow on pushes to the default branch (main)
+  push:
+    branches: ["main"]
+
+  # Allows manual triggering of the workflow from the Actions tab
+  workflow_dispatch:
+
+# Set the permissions for the GITHUB_TOKEN to enable deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Control the concurrency of the deployments to ensure that only one is active at a time
+concurrency:
+  group: "pages-deployment"
+  cancel-in-progress: false
+
+jobs:
+  # Job to build the Jekyll site
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby environment
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0' # Specify the Ruby version to use
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Build the Jekyll site
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production # Ensure Jekyll runs in production mode
+
+      - name: Upload build artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site # The directory where the built site is stored
+
+  # Job to deploy the built site to GitHub Pages
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+# Optional: Notifications (add if you need Slack or email notifications)
+# notifications:
+#   slack:
+#     rooms: <SLACK_WEBHOOK_URL>
+#     message: "Jekyll site deployment completed."
