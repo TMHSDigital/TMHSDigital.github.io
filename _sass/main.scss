@@ -1,4 +1,10 @@
-@import "base/*";
-@import "components/*";
-@import "layout/*";
-@import "utilities/*";
+---
+---
+
+@import "utilities/colors";
+@import "base/reset";
+@import "base/typography";
+@import "layout/layout";
+@import "components/header";
+@import "components/footer";
+@import "utilities/animations";
