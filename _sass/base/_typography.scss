@@ -1,29 +1,51 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lato:wght@400;700&display=swap');
-
-/* Base font styles */
 body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #333;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #00ff00;
+    background-color: #000;
+    text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lato', sans-serif;
-  margin-bottom: 0.5em;
-}
-
-h1 {
-  font-size: 2.5em;
-  margin-bottom: 1rem;
-}
-
-h2 {
-  font-size: 2em;
-  margin-bottom: 1rem;
+    color: #00ff00;
+    margin-bottom: 20px;
 }
 
 p {
-  margin-bottom: 1rem;
+    margin: 0 0 20px;
+    color: #00ff00;
+}
+
+a {
+    color: #00ff00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0f0;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
+}
+
+blockquote {
+    border-left: 4px solid #00ff00;
+    padding-left: 10px;
+    color: #00ff00;
+    font-style: italic;
+}
+
+code {
+    background-color: #111;
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: #00ff00;
 }
