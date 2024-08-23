@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ page.title | escape }} | Webfusion Solutions</title>
-    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
-    <script src="{{ '/assets/js/animations.js' | relative_url }}"></script>
+    {% include head.html %}
 </head>
-<body>
-    <div class="terminal">
-        <header>
-            {% include header.html %}
-        </header>
-        <main>
+<body class="terminal">
+    <div class="container">
+        {% include header.html %}
+
+        <main class="content">
             {{ content }}
         </main>
-        <footer>
-            {% include footer.html %}
-        </footer>
+
+        {% include footer.html %}
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+    <script src="{{ '/assets/js/animations.js' | relative_url }}"></script>
 </body>
 </html>

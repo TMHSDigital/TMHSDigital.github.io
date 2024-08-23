@@ -1,66 +1,60 @@
-gsap.registerPlugin(ScrollTrigger);
+document.addEventListener('DOMContentLoaded', (event) => {
+    gsap.registerPlugin(ScrollTrigger);
 
-gsap.from('.header-text', {
-    duration: 2,
-    text: '',
-    ease: 'power2.inOut',
-    repeat: -1,
-    yoyo: true,
-    repeatDelay: 0.5,
-    ease: 'linear',
-    cursor: 'blink',
-    delay: 1
-});
+    // Typing effect for the main title
+    gsap.to('.site-title', {
+        duration: 2,
+        text: {
+            value: "Webfusion Solutions",
+            delimiter: ""
+        },
+        ease: "none",
+        onComplete: () => {
+            gsap.to('.cursor', {opacity: 0, repeat: -1, yoyo: true, duration: 0.5});
+        }
+    });
 
-gsap.from('.content', {
-    scrollTrigger: {
-        trigger: '.content',
-        start: 'top 80%',
-        end: 'bottom 60%',
-        scrub: true,
-        markers: true,
-    },
-    duration: 2,
-    opacity: 0,
-    y: 50,
-    ease: 'power2.inOut',
-    delay: 0.5,
-    stagger: 0.2,
-});
+    // Fade in effect for content
+    gsap.from('.content', {
+        scrollTrigger: {
+            trigger: '.content',
+            start: 'top 80%',
+            end: 'bottom 60%',
+            scrub: 1,
+        },
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        stagger: 0.2,
+    });
 
-gsap.to('.blinking-text', {
-    duration: 0.5,
-    opacity: 0,
-    ease: 'power2.inOut',
-    repeat: -1,
-    yoyo: true
-});
+    // Navigation items slide in
+    gsap.from('.nav-link', {
+        opacity: 0,
+        y: -20,
+        stagger: 0.1,
+        duration: 0.5,
+        ease: 'power2.out'
+    });
 
-gsap.from('.nav-item', {
-    opacity: 0,
-    y: -30,
-    stagger: 0.3,
-    ease: 'power2.inOut',
-    duration: 1,
-    delay: 0.5,
-    scrollTrigger: {
-        trigger: '.nav',
-        start: 'top 90%',
-        end: 'bottom 80%',
-        scrub: true,
-    },
-});
+    // Footer fade in
+    gsap.from('.site-footer', {
+        scrollTrigger: {
+            trigger: '.site-footer',
+            start: 'top bottom',
+            end: 'bottom bottom',
+            scrub: 1,
+        },
+        opacity: 0,
+        y: 20,
+        duration: 1,
+    });
 
-gsap.from('.footer', {
-    opacity: 0,
-    y: 30,
-    ease: 'power2.inOut',
-    duration: 1.5,
-    delay: 1,
-    scrollTrigger: {
-        trigger: '.footer',
-        start: 'top 90%',
-        end: 'bottom 80%',
-        scrub: true,
-    },
+    // Blinking cursor in footer
+    gsap.to('.blinking-text', {
+        opacity: 0,
+        repeat: -1,
+        yoyo: true,
+        duration: 0.5
+    });
 });
