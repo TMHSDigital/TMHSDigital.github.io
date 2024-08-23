@@ -1,35 +1,27 @@
-@import '../base/global';
-
-@keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-.blinking-text {
-    animation: blink 1s step-start infinite;
-    color: -color;
+@keyframes terminal-flicker {
+    0%, 19.999%, 22%, 62.999%, 64%, 100% {
+        opacity: 1;
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 65.999% {
+        opacity: 0;
+    }
 }
 
 .fade-in {
-    opacity: 0;
-    animation: fadeIn ease-in 1;
-    animation-fill-mode: forwards;
-    animation-duration: 1.5s;
+    animation: terminal-flicker 2s infinite;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+@keyframes scroll-in {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-.scroll-reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: reveal ease-in-out 0.8s forwards;
-}
-
-@keyframes reveal {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.scroll-in {
+    animation: scroll-in 1.5s ease-in-out;
 }

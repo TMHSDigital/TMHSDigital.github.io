@@ -1,62 +1,66 @@
 body {
-  font-family: 'Courier New', Courier, monospace;
-  background-color: #000;
-  color: #00FF00;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  overflow-x: hidden;
+    background-color: #000000; /* Dark background */
+    color: #00FF00; /* Green terminal text */
+    font-family: 'Courier New', Courier, monospace; /* Terminal font */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
 .container {
-  width: 80%;
-  max-width: 1200px;
-  margin: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-header, footer {
-  width: 100%;
-  padding: 1rem 0;
-  background: #111;
-  text-align: center;
-  border-top: 1px solid #444;
-  border-bottom: 1px solid #444;
+header {
+    background-color: #111111;
+    padding: 20px;
+    text-align: center;
 }
 
-main {
-  flex-grow: 1;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 0;
+header h1 {
+    margin: 0;
+    color: #00FF00;
+    text-shadow: 0 0 10px #00FF00;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #00FF00;
-  text-align: center;
-  margin: 0.5rem 0;
+nav a {
+    color: #00FF00;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
 }
 
-p {
-  text-align: center;
-  max-width: 800px;
-  margin: 0.5rem auto;
-  color: #00FF00;
+nav a:hover {
+    text-shadow: 0 0 5px #00FF00;
 }
 
-a {
-  color: #00FF00;
-  text-decoration: none;
-  border-bottom: 1px dashed #00FF00;
+footer {
+    background-color: #111111;
+    padding: 10px;
+    text-align: center;
+    color: #00FF00;
+    font-size: 14px;
+    border-top: 1px solid #333;
 }
 
-a:hover {
-  color: #FF00FF;
-  border-bottom-color: #FF00FF;
+.section-title {
+    font-size: 2rem;
+    margin: 20px 0;
+    color: #00FF00;
+    text-shadow: 0 0 5px #00FF00;
+}
+
+.section-content {
+    background-color: #111111;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.section-content p {
+    color: #00FF00;
 }
