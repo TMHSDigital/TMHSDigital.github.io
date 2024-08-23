@@ -1,31 +1,32 @@
-/* Color Variables */
-$primary-color: #2b2d42;
-$secondary-color: #8d99ae;
-$accent-color: #ef233c;
-$background-color: #edf2f4;
-$text-color: #333;
+-color: #0d0d0d;  // Dark background
+-color: #00ff00;  // Green text (classic terminal color)
+-color: #ffffff;  // White text for contrast
+-color: #00ffff;  // Cyan links
+-hover-color: #ff00ff;  // Magenta for hover effect
+-color: #00ff00;  // Green for headers
+-color: #333333;  // Dark grey for subtle borders
 
-/* Apply colors */
+// Usage of colors
 body {
-  background-color: $background-color;
-  color: $text-color;
+    background-color: -color;
+    color: -color;
 }
 
 a {
-  color: $accent-color;
-  text-decoration: none;
+    color: -color;
+    &:hover {
+        color: -hover-color;
+    }
 }
 
-a:hover {
-  color: $primary-color;
-  text-decoration: underline;
+h1, h2, h3, h4, h5, h6 {
+    color: -color;
 }
 
-.navbar, .footer {
-  background-color: $primary-color;
-  color: white;
+.blinking-text {
+    color: -color;
 }
 
-.navbar a, .footer a {
-  color: white;
+.border {
+    border-color: -color;
 }

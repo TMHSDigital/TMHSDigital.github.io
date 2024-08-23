@@ -1,51 +1,30 @@
 body {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #00ff00;
-    background-color: #000;
-    text-align: center;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: #00ff00;
-    margin-bottom: 20px;
-}
-
-p {
-    margin: 0 0 20px;
-    color: #00ff00;
+    background-color: -bg-color;
+    color: -text-color;
+    line-height: 1.5;
 }
 
 a {
-    color: #00ff00;
+    color: -color;
     text-decoration: none;
-    transition: color 0.3s ease;
+    &:hover {
+        color: -color;
+    }
 }
 
-a:hover {
-    color: #0f0;
+h1, h2, h3, h4, h5, h6 {
+    color: -text-color;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
 }
 
-ul, ol {
-    list-style: none;
-    padding: 0;
+p {
+    margin-bottom: 1rem;
 }
 
-li {
-    margin: 5px 0;
-}
-
-blockquote {
-    border-left: 4px solid #00ff00;
-    padding-left: 10px;
-    color: #00ff00;
-    font-style: italic;
-}
-
-code {
-    background-color: #111;
-    padding: 2px 4px;
-    border-radius: 4px;
-    color: #00ff00;
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
 }

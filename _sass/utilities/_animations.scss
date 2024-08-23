@@ -1,29 +1,35 @@
-@import 'colors';
+@import '../base/global';
 
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
-@keyframes slideIn {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(0); }
-}
-
-@keyframes blinkCursor {
-  0%, 100% { border-right-color: transparent; }
-  50% { border-right-color: -primary; }
+.blinking-text {
+    animation: blink 1s step-start infinite;
+    color: -color;
 }
 
 .fade-in {
-  animation: fadeIn 1.5s ease-in-out;
+    opacity: 0;
+    animation: fadeIn ease-in 1;
+    animation-fill-mode: forwards;
+    animation-duration: 1.5s;
 }
 
-.slide-in {
-  animation: slideIn 1s ease-out;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-.blinking-cursor {
-  border-right: 2px solid -primary;
-  animation: blinkCursor 0.75s step-end infinite;
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: reveal ease-in-out 0.8s forwards;
+}
+
+@keyframes reveal {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }

@@ -1,43 +1,66 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Simulate typing effect
-    const texts = document.querySelectorAll(".container h1, .container h2, .container p");
-    texts.forEach(text => {
-        const chars = text.innerHTML.split("");
-        text.innerHTML = "";
-        chars.forEach((char, i) => {
-            setTimeout(() => {
-                text.innerHTML += char;
-            }, 100 * i);
-        });
-    });
+gsap.registerPlugin(ScrollTrigger);
 
-    // Blinking cursor effect
-    const cursor = document.createElement("span");
-    cursor.className = "cursor";
-    cursor.innerHTML = "|";
-    document.body.appendChild(cursor);
+gsap.from('.header-text', {
+    duration: 2,
+    text: '',
+    ease: 'power2.inOut',
+    repeat: -1,
+    yoyo: true,
+    repeatDelay: 0.5,
+    ease: 'linear',
+    cursor: 'blink',
+    delay: 1
+});
 
-    gsap.to(".cursor", {
-        opacity: 0,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
-        duration: 0.6
-    });
+gsap.from('.content', {
+    scrollTrigger: {
+        trigger: '.content',
+        start: 'top 80%',
+        end: 'bottom 60%',
+        scrub: true,
+        markers: true,
+    },
+    duration: 2,
+    opacity: 0,
+    y: 50,
+    ease: 'power2.inOut',
+    delay: 0.5,
+    stagger: 0.2,
+});
 
-    // Scroll-triggered section fade-in
-    gsap.utils.toArray(".container").forEach(section => {
-        gsap.from(section, {
-            duration: 1.5,
-            opacity: 0,
-            y: 50,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: section,
-                start: "top 80%",
-                end: "bottom 60%",
-                toggleActions: "play none none reverse"
-            }
-        });
-    });
+gsap.to('.blinking-text', {
+    duration: 0.5,
+    opacity: 0,
+    ease: 'power2.inOut',
+    repeat: -1,
+    yoyo: true
+});
+
+gsap.from('.nav-item', {
+    opacity: 0,
+    y: -30,
+    stagger: 0.3,
+    ease: 'power2.inOut',
+    duration: 1,
+    delay: 0.5,
+    scrollTrigger: {
+        trigger: '.nav',
+        start: 'top 90%',
+        end: 'bottom 80%',
+        scrub: true,
+    },
+});
+
+gsap.from('.footer', {
+    opacity: 0,
+    y: 30,
+    ease: 'power2.inOut',
+    duration: 1.5,
+    delay: 1,
+    scrollTrigger: {
+        trigger: '.footer',
+        start: 'top 90%',
+        end: 'bottom 80%',
+        scrub: true,
+    },
 });
