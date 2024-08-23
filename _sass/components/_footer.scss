@@ -8,8 +8,13 @@
   
   .blinking-text {
     display: inline-block;
-    width: 0.5em;
-    height: 1em;
+    width: 10px;
+    height: 20px;
     background-color: $text-color;
-    margin-left: 0.5em;
+    margin-left: 5px;
+    animation: blink 1s step-end infinite;
+  }
+  
+  @keyframes blink {
+    50% { opacity: 0; }
   }
