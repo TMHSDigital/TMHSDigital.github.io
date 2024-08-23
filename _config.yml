@@ -1,13 +1,13 @@
 title: Webfusion Solutions
 description: AI, Automation, and Digital Services such as Web Design, Social Media, and Marketing
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "https://tmhsdigital.github.io" # Update this to your actual GitHub Pages URL
 twitter_username: webfusion
 github_username: webfusion
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: null # Remove minima theme
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -17,3 +17,20 @@ collections:
     output: true
   products:
     output: true
+
+# Exclude files from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .sass-cache/
+  - .jekyll-cache/
+
+# Sass settings
+sass:
+  sass_dir: _sass
+  style: compressed
