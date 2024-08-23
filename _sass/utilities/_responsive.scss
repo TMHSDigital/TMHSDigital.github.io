@@ -1,31 +1,29 @@
-/* Mobile First Approach */
-.container {
-  padding: 10px;
-}
-
-.header, .footer {
-  padding: 15px 0;
-}
-
-.nav ul {
-  flex-direction: column;
-}
-
-.nav ul li {
-  margin-bottom: 10px;
-}
-
-/* Larger devices (tablets and up) */
-@media (min-width: 768px) {
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
   .container {
-    padding: 20px;
+    width: 95%;
   }
 
-  .nav ul {
-    flex-direction: row;
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .nav ul li {
-    margin-bottom: 0;
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.75em;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.5em;
   }
 }

@@ -1,0 +1,31 @@
+/* Color Variables */
+$primary-color: #2b2d42;
+$secondary-color: #8d99ae;
+$accent-color: #ef233c;
+$background-color: #edf2f4;
+$text-color: #333;
+
+/* Apply colors */
+body {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+a {
+  color: $accent-color;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $primary-color;
+  text-decoration: underline;
+}
+
+.navbar, .footer {
+  background-color: $primary-color;
+  color: white;
+}
+
+.navbar a, .footer a {
+  color: white;
+}

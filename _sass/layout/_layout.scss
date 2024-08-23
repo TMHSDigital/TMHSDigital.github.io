@@ -1,0 +1,43 @@
+/* Container styles */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Spacing adjustments */
+section {
+  margin-bottom: 3rem;
+}
+
+.navbar, .footer {
+  background-color: #f8f9fa;
+  padding: 1rem 0;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar ul li {
+  margin: 0 1rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9em;
+  color: #888;
+}
+
+.footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
