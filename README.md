@@ -1,6 +1,3 @@
-Here is a detailed `README.md` file that will guide users on how to add new content to the site, provide an overview of the structure, and explain how changes to files impact others.
-
-```markdown
 # Webfusion Solutions Website
 
 Welcome to the Webfusion Solutions website! This repository contains the source code for the company's website, which specializes in AI, Automation, and Digital Services such as web design, social media, and marketing.
@@ -136,21 +133,6 @@ The project is organized as follows:
    ```sh
    bundle install
    ```
-
-2. **Serve the Site Locally:**
-   Start the Jekyll server to view the site locally:
-   ```sh
-   bundle exec jekyll serve
-   ```
-   The site will be available at `http://127.0.0.1:4000`.
-
-### Deployment
-
-- The site is designed to be deployed on GitHub Pages. Simply push your changes to the `main` branch, and GitHub Pages will automatically build and deploy your site.
-
-## Contributing
-
-Feel free to contribute to the Webfusion Solutions website by submitting a pull request. Make sure to follow the project's style and contribute to the existing structure to maintain consistency.
 
 ---
 
