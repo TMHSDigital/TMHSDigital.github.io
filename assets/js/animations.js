@@ -1,19 +1,9 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Typing effect for the main title
-    gsap.to('.site-title', {
-        duration: 2,
-        text: {
-            value: "Webfusion Solutions",
-            delimiter: ""
-        },
-        ease: "none",
-        onComplete: () => {
-            gsap.to('.cursor', {opacity: 0, repeat: -1, yoyo: true, duration: 0.5});
-        }
-    });
-
+    gsap.from('.site-title', {duration: 1, opacity: 0, y: -50, ease: 'power3.out'});
+    gsap.from('.nav-link', {duration: 0.5, opacity: 0, y: -20, stagger: 0.1, ease: 'power2.out'});
+    gsap.from('.content', {duration: 1, opacity: 0, y: 50, ease: 'power3.out', delay: 0.5});
+  });
+  
     // Fade in effect for content
     gsap.from('.content', {
         scrollTrigger: {
