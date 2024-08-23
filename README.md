@@ -52,7 +52,6 @@ The project is organized as follows:
 
 ### Adding a New Service
 
-```markdown
 # Example command
 1. **Create a New Markdown File:**
    - Navigate to the `_services/` directory.
