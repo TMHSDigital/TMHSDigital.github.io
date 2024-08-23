@@ -1,66 +1,18 @@
-body {
-    background-color: #000000; /* Dark background */
-    color: #00FF00; /* Green terminal text */
-    font-family: 'Courier New', Courier, monospace; /* Terminal font */
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-.container {
+.terminal {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: $bg-color;
+  }
+  
+  .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-}
-
-header {
-    background-color: #111111;
-    padding: 20px;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    color: #00FF00;
-    text-shadow: 0 0 10px #00FF00;
-}
-
-nav a {
-    color: #00FF00;
-    text-decoration: none;
-    padding: 10px;
-    display: inline-block;
-}
-
-nav a:hover {
-    text-shadow: 0 0 5px #00FF00;
-}
-
-footer {
-    background-color: #111111;
-    padding: 10px;
-    text-align: center;
-    color: #00FF00;
-    font-size: 14px;
-    border-top: 1px solid #333;
-}
-
-.section-title {
-    font-size: 2rem;
-    margin: 20px 0;
-    color: #00FF00;
-    text-shadow: 0 0 5px #00FF00;
-}
-
-.section-content {
-    background-color: #111111;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-    margin-bottom: 20px;
-}
-
-.section-content p {
-    color: #00FF00;
-}
+    padding: 0 20px;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px 0;
+  }

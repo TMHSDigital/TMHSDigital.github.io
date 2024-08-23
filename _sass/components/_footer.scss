@@ -1,0 +1,15 @@
+.site-footer {
+    margin-top: 20px;
+    padding: 20px 0;
+    border-top: 1px solid $border-color;
+    text-align: center;
+    font-size: 0.875em;
+  }
+  
+  .blinking-text {
+    display: inline-block;
+    width: 0.5em;
+    height: 1em;
+    background-color: $text-color;
+    margin-left: 0.5em;
+  }

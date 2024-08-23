@@ -1,27 +1,26 @@
-@keyframes terminal-flicker {
-    0%, 19.999%, 22%, 62.999%, 64%, 100% {
-        opacity: 1;
-    }
-    20%, 21.999%, 63%, 63.999%, 65%, 65.999% {
-        opacity: 0;
-    }
-}
-
-.fade-in {
-    animation: terminal-flicker 2s infinite;
-}
-
-@keyframes scroll-in {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+  }
+  
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+  
+  .slide-in {
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideIn 0.5s ease-out forwards;
+  }
+  
+  @keyframes slideIn {
     to {
-        transform: translateY(0);
-        opacity: 1;
+      transform: translateY(0);
+      opacity: 1;
     }
-}
-
-.scroll-in {
-    animation: scroll-in 1.5s ease-in-out;
-}
+  }

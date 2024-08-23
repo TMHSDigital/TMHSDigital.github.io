@@ -1,60 +1,10 @@
-@import 'base/global';
-@import 'base/typography';
-@import 'layout/layout';
-@import 'utilities/colors';
-@import 'utilities/responsive';
-@import 'utilities/animations';
+---
+---
 
-body {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #0a0a0a;
-    color: #00ff00;
-    line-height: 1.6;
-    text-shadow: 0 0 5px rgba(0, 255, 0, 0.75);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Courier New', Courier, monospace;
-    color: #00ff00;
-    text-shadow: 0 0 5px rgba(0, 255, 0, 0.75);
-}
-
-p {
-    font-family: 'Courier New', Courier, monospace;
-    color: #00ff00;
-    text-shadow: 0 0 5px rgba(0, 255, 0, 0.75);
-}
-
-a {
-    color: #00ff00;
-    text-decoration: none;
-    border-bottom: 1px dashed #00ff00;
-    transition: all 0.3s ease;
-}
-
-a:hover {
-    color: #ff00ff;
-    border-bottom: 1px dashed #ff00ff;
-}
-
-.navbar {
-    background-color: #0a0a0a;
-    border-bottom: 1px solid #00ff00;
-}
-
-.footer {
-    background-color: #0a0a0a;
-    border-top: 1px solid #00ff00;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.header-text, .content, .footer {
-    animation: blink 1s steps(2, start) infinite;
-}
-
-@keyframes blink {
-    to {
-        visibility: hidden;
-    }
-}
+@import "base/reset";
+@import "base/typography";
+@import "layout/layout";
+@import "components/header";
+@import "components/footer";
+@import "utilities/animations";
+@import "utilities/colors";
